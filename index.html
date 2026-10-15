@@ -1,0 +1,575 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#120824">
+<title>Happy Birthday Meeenuuuu 💜</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --bg: #120824;
+  --card: #24143d;
+  --purple: #b58aff;
+  --pink: #efc5ff;
+  --white: #fff5ff;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--white);
+  font-family: Poppins, sans-serif;
+  overflow-x: hidden;
+}
+
+button { font-family: inherit; cursor: pointer; }
+
+.hero {
+  min-height: 100vh;
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 90px 20px 40px;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background:
+    linear-gradient(#10061bc9, #160926b5),
+    url("https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1800&q=85")
+    center/cover;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(ellipse at center, #a16bff35, transparent 70%);
+}
+
+nav {
+  position: absolute;
+  top: 18px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 10px;
+}
+
+nav a {
+  color: #f1dcff;
+  font-size: 11px;
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+
+.hero-content { max-width: 800px; }
+
+.eyebrow, .tag {
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 10px;
+  color: #d8b8ff;
+  text-align: center;
+}
+
+h1 {
+  font: 400 clamp(62px, 12vw, 120px)/1.15 "Great Vibes", cursive;
+  color: #e1c5ff;
+  text-shadow: 0 0 35px #bb83ff77;
+  margin: 25px 0;
+}
+
+.hero p, .intro {
+  line-height: 2;
+  color: #e5d8f4;
+}
+
+.hero p { max-width: 600px; margin: 0 auto 28px; }
+
+.btn {
+  border: 1px solid #ead8ff55;
+  background: linear-gradient(135deg, #bb8aff, #7436bb);
+  color: white;
+  padding: 14px 24px;
+  border-radius: 50px;
+  box-shadow: 0 8px 28px #9d5aff35;
+  transition: .25s;
+}
+
+.btn:hover { transform: translateY(-3px); }
+
+section { padding: 80px 20px; }
+
+.container { max-width: 1000px; margin: auto; }
+
+h2 {
+  text-align: center;
+  font: 400 clamp(45px, 8vw, 75px) "Great Vibes", cursive;
+  color: #d8b8ff;
+  margin: 15px 0 30px;
+}
+
+.intro { max-width: 720px; text-align: center; margin: 0 auto 30px; }
+
+.letter {
+  background: linear-gradient(145deg, #291842, #1b102c);
+  border: 1px solid #b58aff40;
+  border-radius: 24px;
+  padding: clamp(24px, 6vw, 48px);
+  line-height: 2;
+  font-size: 14px;
+  box-shadow: 0 15px 50px #0002;
+}
+
+.signature {
+  font: 34px "Great Vibes", cursive;
+  color: #e4c4ff;
+}
+
+.gallery { background: #1b102c; }
+
+.photos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 17px;
+}
+
+.photo {
+  overflow: hidden;
+  border-radius: 18px;
+  background: #2b1943;
+  border: 1px solid #b58aff45;
+}
+
+.photo img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  display: block;
+  transition: transform .4s;
+}
+
+.photo:hover img { transform: scale(1.05); }
+
+.photo p {
+  font-size: 12px;
+  text-align: center;
+  padding: 12px;
+  margin: 0;
+}
+
+.song-box {
+  max-width: 650px;
+  margin: auto;
+  padding: 28px;
+  border-radius: 24px;
+  text-align: center;
+  background: var(--card);
+  border: 1px solid #b58aff40;
+}
+
+.disc {
+  width: 110px;
+  height: 110px;
+  margin: auto;
+  display: grid;
+  place-items: center;
+  font-size: 40px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #edddff, #884cc4, #24113a);
+}
+
+.spinning { animation: spin 5s linear infinite; }
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.gift-section {
+  text-align: center;
+  background: radial-gradient(ellipse at center, #382053, #120824 75%);
+}
+
+.gift {
+  font-size: 80px;
+  margin: 20px 0;
+  animation: bob 2.5s ease-in-out infinite;
+}
+
+#secret {
+  display: none;
+  max-width: 650px;
+  margin: 25px auto;
+  background: #291842;
+  border: 1px solid #cba6ff55;
+  border-radius: 24px;
+  padding: 30px;
+  line-height: 2;
+}
+
+#secret.show { display: block; animation: appear .6s ease; }
+
+@keyframes appear {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes bob {
+  50% { transform: translateY(-12px) rotate(4deg); }
+}
+
+/* Floating petals and hearts */
+.falling {
+  position: fixed;
+  top: -60px;
+  z-index: 1000;
+  pointer-events: none;
+  user-select: none;
+  animation: fall linear forwards;
+  filter: drop-shadow(0 0 6px #c99aff40);
+}
+
+@keyframes fall {
+  0% { transform: translate(0, -5vh) rotate(0deg); opacity: 0; }
+  10% { opacity: .9; }
+  50% { transform: translate(35px, 50vh) rotate(180deg); }
+  100% { transform: translate(-30px, 110vh) rotate(360deg); opacity: 0; }
+}
+
+#musicStart {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  bottom: auto;
+  z-index: 9999;
+}
+footer {
+  background: #0c0515;
+  text-align: center;
+  padding: 35px 20px;
+  color: #c7b1df;
+  font-size: 12px;
+  line-height: 2;
+}
+
+@media(max-width: 700px) {
+  .photos { grid-template-columns: repeat(2, 1fr); }
+  .photo img { height: 220px; }
+  nav { gap: 12px; }
+}
+
+@media(max-width: 450px) {
+  .photos { grid-template-columns: 1fr; }
+  .photo img { height: 280px; }
+}
+
+@media(prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+```css
+/* FORCE MUSIC BUTTON TO TOP-RIGHT */
+#musicStart,
+#musicToggle,
+.floating-music {
+  position: fixed !important;
+  top: 20px !important;
+  right: 20px !important;
+  bottom: auto !important;
+  left: auto !important;
+  transform: none;
+  z-index: 99999 !important;
+}
+```
+</style>
+</head>
+```html
+<style>
+#musicStart,
+#musicToggle,
+.floating-music,
+button[onclick="startMusic()"],
+button[onclick="toggleMusic()"] {
+  position: fixed !important;
+  top: 15px !important;
+  right: 15px !important;
+  bottom: unset !important;
+  left: unset !important;
+  margin: 0 !important;
+  transform: none !important;
+  z-index: 999999 !important;
+}
+</style>
+```
+
+<body>
+
+<header class="hero" id="home">
+  <nav>
+    <a href="#home">HOME</a>
+    <a href="#letter">LETTER</a>
+    <a href="#gallery">GALLERY</a>
+    <a href="#music">MUSIC</a>
+    <a href="#gift">SURPRISE</a>
+  </nav>
+
+  <div class="hero-content">
+    <div class="eyebrow">Happyyyy walaaaa birthdayyyyy zeeshannnn kiiii jaannnn😭𓆩❤︎𓆪</div>
+    <h1>Happy Birthday<br>Meeenuuuu 💜</h1>
+
+    <p>
+      Aj tohhh meriii januuuu kaaaa happyyy walaaa bdayyy heiiiii😍😍😍😍😍. 
+    </p>
+
+    <button class="btn" onclick="goTo('letter')">
+      Open Your Surprise ♡
+    </button>
+  </div>
+</header>
+
+<section id="letter">
+  <div class="container">
+    <div class="tag">From my heart to yours</div>
+    <h2>Dear Meeenuuuu 💌</h2>
+
+    <article class="letter">
+      <p><strong>Happiestttt birthdayyyyyy meraaa Meeenuuuu bachaaaaa! 🥹💜</strong></p>
+
+      <p>
+        Allahhhh hmeshaaa apkooo khushhh rkhayyy abaaddd rkhayyy orrrr meraa rkhayyyy ameeennnnnn. Mashallahhh mashallahhhh meriii chiryaaa ajj 16 ki hogyiiii mashallahhhh. or bs hmesha hasti muskuratiiii rhennnn orrr hazarooo saaalll jiyennnn ameeennnnnn. 🤍
+      </p>
+
+      <p>
+        12 august ko kabhi socha nhi tha k kuch aisa bhi hoga lekin allah jee ne duaen sunli or bs 20 december ko ap meri hogyi(aj bhi apki confession yaad hei)
+
+      <p>
+        Hmeshaaa khushhhh rhennnn abaddd rhennn meriii rhennn inshallah inshallah boht jald muntaha zeeshan bannay wali hein ap anyway🤭
+      </p>
+
+      <p>
+       Allah apko hmesha mere sath rkhay or jald se jald apko mere sath halal rishte mein laye ameen. 🫠🌙
+      </p>
+
+      <p class="signature">Always wishing the best for you. ♡</p>
+    </article>
+  </div>
+</section>
+
+<section class="gallery" id="gallery">
+  <div class="container">
+    <div class="tag">A gallery full of magic</div>
+    <h2>Little Memories 📸</h2>
+
+    <p class="intro">
+      . 💜
+    </p>
+
+    <div class="photos">
+      <div class="photo">
+        <img src="505F6136-AF7A-4BFB-AE99-5CF3F750E49F.jpg"
+             alt="Flowers" loading="lazy">
+        <p>🌸</p>
+      </div>
+
+      <div class="photo">
+        <img src="EA8CA89B-B3EE-4432-891D-FD5A4B4A2180.jpg"
+             alt="Couple holding hands" loading="lazy">
+        <p>💕</p>
+      </div>
+
+      <div class="photo">
+        <img src="IMG_20260801_230132_831.jpg"
+             alt="Flower bouquet" loading="lazy">
+        <p> 💐</p>
+      </div>
+
+      <div class="photo">
+        <img src="IMG_3159.jpg"
+             alt="Birthday celebration" loading="lazy">
+        <p> 🎂</p>
+      </div>
+
+      <div class="photo">
+        <img src="IMG_20260730_173008_356.jpg"
+             alt="Starry night sky" loading="lazy">
+        <p>✨</p>
+      </div>
+
+      <div class="photo">
+        <img src="IMG_20260730_173025_239.jpg"
+             alt="Coffee and flowers" loading="lazy">
+        <p>😍</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+ 
+
+     
+
+      <p style="font-size:12px;color:#d8b8ff">
+        
+      </p>
+
+      <button class="btn" onclick="toggleMusic()">
+        Play / Pause Music 🎶
+      </button>
+    </div>
+  </div>
+</section>
+
+<section class="gift-section" id="gift">
+  <div class="container">
+    <div class="tag">One last surprise</div>
+    <h2>Open Your Little Gift 🎁</h2>
+
+    <div class="gift">🎁</div>
+
+    <p class="intro">
+      Meeenuuuu, there's one more message waiting
+      for you inside this gift. 💜
+    </p>
+
+    <button class="btn" id="giftBtn" onclick="openGift()">
+      Unwrap Your Gift ✨
+    </button>
+
+    <div id="secret">
+      <div style="font-size:45px">💜🌙✨</div>
+
+      <h3 style="font:35px 'Great Vibes',cursive;color:#d8b8ff">
+        A little reminder for you
+      </h3>
+
+      <p>
+        I loveeeeeee uuuuuuu sooooooo muchhhhh meriiiii januuuuuu😭😭😭 bohttttt hiiiii zyadaaaa pyariiii heinnn appp kheirrrr anywayyy😭 hmeshaaa yooonnn hiii hastiiii muskuratiiii rhennnn ameennn😭𓆩❤︎𓆪
+      </p>
+
+      <p>
+        And always remember i will always love u as a husband ofc😭🤍
+      </p>
+
+      <strong>Happy Birthday, Meeenuuuu! 💜👑</strong>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div style="font-size:26px">💜 ♡ 💜</div>
+  Made with love, just for Meeenuuuu.
+  <br>One special girl. One special day. Endless wishes. ✨
+</footer>
+
+<!-- Background song -->
+<audio id="birthdayMusic" loop preload="auto">
+  <source src="songs/birthday.mp3" type="audio/mpeg">
+</audio>
+
+
+<button class="btn" id="musicToggle" onclick="toggleMusic()">
+  🎵 Start Birthday Song
+</button>
+
+
+<script>
+const music = document.getElementById("birthdayMusic");
+const musicButton = document.getElementById("musicStart");
+const disc = document.getElementById("disc");
+
+music.volume = 0.95;
+
+function goTo(id) {
+  document.getElementById(id).scrollIntoView({behavior:"smooth"});
+}
+
+async function startMusic() {
+  try {
+    await music.play();
+    musicButton.textContent = "♫ Music Playing 💜";
+    musicButton.style.display = "block";
+    disc.classList.add("spinning");
+  } catch (error) {
+    musicButton.textContent = "💜 Tap to Play Birthday Music";
+    musicButton.style.display = "block";
+  }
+}
+
+function toggleMusic() {
+  if (music.paused) {
+    startMusic();
+  } else {
+    music.pause();
+    disc.classList.remove("spinning");
+    musicButton.textContent = "♫ Music Paused";
+    musicButton.style.display = "block";
+  }
+}
+
+music.addEventListener("play", () => {
+  disc.classList.add("spinning");
+  musicButton.textContent = "♫ Music Playing 💜";
+});
+
+music.addEventListener("pause", () => {
+  disc.classList.remove("spinning");
+});
+
+window.addEventListener("load", () => {
+  startMusic();
+  setTimeout(() => createFalling("🌸"), 20);
+});
+
+document.addEventListener("pointerdown", function firstInteraction() {
+  if (music.paused) startMusic();
+}, {once:true});
+
+function createFalling(type) {
+  const item = document.createElement("span");
+  item.className = "falling";
+
+  const symbols = type === "flower"
+    ? ["🌸", "🪻", "🌷", "🌺", "💜"]
+    : ["💜", "💕", "♡", "✨"];
+
+  item.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+  item.style.left = Math.random() * 100 + "vw";
+  item.style.fontSize = (16 + Math.random() * 20) + "px";
+  item.style.animationDuration = (7 + Math.random() * 7) + "s";
+
+  document.body.appendChild(item);
+  setTimeout(() => item.remove(), 15000);
+}
+
+// Gentle continuous shower of purple flowers and hearts
+setInterval(() => createFalling("flower"), 850);
+setInterval(() => createFalling("heart"), 1500);
+
+function openGift() {
+  document.getElementById("secret").classList.add("show");
+  document.getElementById("giftBtn").textContent = "Gift Opened! 💜";
+
+  for (let i = 0; i < 35; i++) {
+    setTimeout(() => createFalling("heart"), i * 80);
+  }
+  
+}
+</script>
+
+</body>
+</html>
